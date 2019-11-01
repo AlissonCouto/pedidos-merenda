@@ -1,0 +1,1 @@
+<h1 style="text-align: center;">Vixi, alguma coisa errada não está certa. Contate o desenvolvedor ou tente novamente mais tarde!</h1>

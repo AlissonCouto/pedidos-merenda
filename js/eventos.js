@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(a){a=document.getElementById("body");a.lastChild.previousSibling.classList.add("prop-width");console.log(a.lastChild.previousSibling)});function toggle(a){"selectAllEsc"===a.id&&$("input:checkbox.chkEsc").prop("checked",a.checked);"selectAllProd"===a.id&&$("input:checkbox.chkProd").prop("checked",a.checked)};

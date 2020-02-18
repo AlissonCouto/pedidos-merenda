@@ -228,7 +228,7 @@
 
                 <tr scope="row" class="tbRows">
                     <td class="tbThAssEscola"><?= $escola->getNome() ?></td>
-                    <td class="text-center">____/____/2019</td>
+                    <td class="text-center">____/____/<?= date('Y'); ?></td>
                     <td></td>
                     <td class="text-center"></td>
                     <td class="text-center"></td>
@@ -240,7 +240,7 @@
 
             <tr class="tbRows">
                 <td colspan="5">
-                    <span>A ORDEM __________/2019 E ESTA LISTA DE DISTRIBUÇÃO FORAM GERADAS CONFORME PEDIDO DA NUTRICIONISTA ANDRIELLI CORRÊA,MATRÍCULA 8560/0.</span>
+                    <span>A ORDEM __________/<?= date('Y'); ?> E ESTA LISTA DE DISTRIBUÇÃO FORAM GERADAS CONFORME PEDIDO DA NUTRICIONISTA ANDRIELLI CORRÊA,MATRÍCULA 8560/0.</span>
                 </td>
             </tr>
 

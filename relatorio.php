@@ -37,7 +37,7 @@ switch ($categoria) {
     <title>Relatório do pedido</title>
 
     <!-- IMPORTAÇÕES DE ESTILO -->
-    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="estilo/relatorio.css">
 
 </head>
@@ -59,10 +59,10 @@ switch ($categoria) {
 
 <script>
            var prop = null
-           window.addEventListener("beforeprint", function (event){
-                let dv = document.getElementById('main')
-                prop = dv.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling
 
+           window.addEventListener("beforeprint", function (event){
+                /* DIV CRIADA PELOS DESENVOLVEDORES DA HOSPEDAGEM */
+                let prop = document.querySelector(".prop-width")
                 prop.parentNode.removeChild(prop)
 
            })
@@ -74,4 +74,4 @@ switch ($categoria) {
 </script>
 </body>
 
-</html>			
+</html>		

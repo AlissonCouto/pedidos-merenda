@@ -13,14 +13,9 @@
     $daoModalidade = new DaoModalidade();
     $daoCategoria = new DaoCategoria();
 
-    
-    try{
-        $listaCategorias = $daoCategoria->getAll();
-        $listaModalidade = $daoModalidade->getAll();
-    }catch(PDOException $e){
-        require_once 'error.php';
-    }
-    
+    $listaCategorias = $daoCategoria->getAll();
+    $listaModalidade = $daoModalidade->getAll();
+
     $daoEscola = new DaoEscola();
     $daoProduto = new DaoProduto();
 
@@ -53,7 +48,7 @@
         );
 
     }catch(PDOException $e){
-        require_once 'error.php';
+        echo "<h1>Erro!!!</h1>";
     }
 
     // Tratando escolas e produtos enviadas via POST
@@ -276,4 +271,4 @@
     <script src="./lib/jquery/jquery191.js"></script>
     <script src="./js/eventos.js"></script>
 </body>
-</html>				
+</html>

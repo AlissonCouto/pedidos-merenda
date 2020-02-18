@@ -16,7 +16,7 @@
     <?= $fornecedor->cnpj ?> os produtos constantes na nota fiscal nº __________________ de
     ______/______/________ ,
     distribuídos entre as unidades da rede municipal de ensino, conforme ordem de fornecimento n°.
-    ___________ /2019
+    ___________ /<?= date('Y'); ?>
     de ______/______/________, <?php if ($categoria == 4) {
         echo "para ser utilizado no dia logo após a
 entrega";

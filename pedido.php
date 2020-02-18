@@ -32,26 +32,21 @@ include_once 'config.php';
         if(!$escolasId || !$produtosId){
             $msg[] = "Volte a página anterior e selecione no mínimo um produto e uma escola!";
         }else{
-            
-                try{
-                    // Se tudo foi informado
-                    // Montar cláusula in (do SQL) das escolas
-                     $escolasId = implode(", ", $escolasId);
-                     $inEscolas = "in (" . $escolasId . ")";
+            // Se tudo foi informado
+                // Montar cláusula in (do SQL) das escolas
+                $escolasId = implode(", ", $escolasId);
+                $inEscolas = "in (" . $escolasId . ")";
                 
-                     // Montar cláusula in (do SQL) dos produtos
-                     $produtosId = implode(", ", $produtosId);
-                     $inProdutos = "in (" . $produtosId . ")";
+                // Montar cláusula in (do SQL) dos produtos
+                $produtosId = implode(", ", $produtosId);
+                $inProdutos = "in (" . $produtosId . ")";
 
-                     $rawQuery = "SELECT * FROM tbEscola WHERE id {$inEscolas}";
+                $rawQuery = "SELECT * FROM tbEscola WHERE id {$inEscolas}";
 
-                     $listaEscolas = $daoEscolas->select($rawQuery);
+                $listaEscolas = $daoEscolas->select($rawQuery);
 
-                     $rawQuery = "SELECT * FROM tbProduto WHERE id {$inProdutos} ORDER BY descricao ASC";
-                     $listaProdutos = $daProdutos->select($rawQuery);
-                }catch(PDOException $e){
-                     require_once 'error.php';
-                }
+                $rawQuery = "SELECT * FROM tbProduto WHERE id {$inProdutos} ORDER BY descricao ASC";
+                $listaProdutos = $daProdutos->select($rawQuery);
 
         }
 
@@ -132,13 +127,12 @@ include_once 'config.php';
 
             }catch(PDOException $e){
                 $sql->rollback();
-                /*echo "<b>Código: </b>" . $e->getCode();
+                echo "<b>Código: </b>" . $e->getCode();
                 echo "<br> <b>Mensagem: </b>" . $e->getMessage();
                 echo "<br> <b>Arquivo: </b>" . $e->getFile();
                 echo "<br> <b>Linha: </b>" . $e->getLine();
                 echo "<br> ============ <br> <br>";
-                $e->getTrace();*/
-                require_once 'error.php';
+                $e->getTrace();
             }
         }
 
@@ -177,7 +171,7 @@ include_once 'config.php';
                 }
                 ?>
 
-    <form action="" target="_blank" method="post" name="ok">
+    <form action="" method="post" name="ok">
             <header class="row d-flex justify-content-center align-items-center">
 
                 <div class="col-12">
@@ -208,7 +202,7 @@ include_once 'config.php';
 
                              ?>
 
-                                    <th><?= $v->getDescricao() ?></th>
+                                    <th class="head-prod"><?= $v->getDescricao() ?></th>
 
                                     <?php
 
